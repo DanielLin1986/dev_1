@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>小考拉澳洲代购</title>
+<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/craftyslide.css" />
+<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon"/>
+<SCRIPT src="../js/jquery-1.11.1.min.js" type=text/javascript></SCRIPT>
+<SCRIPT type=text/javascript>
+$(document).ready(function() {	
+	$("#menu2 li").prepend("<span></span>"); //Throws an empty span tag right before the a tag
+	
+	$("#menu2 li").each(function() { //For each list item...
+		var linkText = $(this).find("a").html(); //Find the text inside of the a tag
+		$(this).find("span").show().html(linkText); //Add the text in the span tag
+	}); 
+	
+	$("#menu2 li").hover(function() {	//On hover...
+		$(this).find("span").stop().animate({ 
+			marginTop: "-40" //Find the span tag and move it up 40 pixels
+		}, 250);
+	} , function() { //On hover out...
+		$(this).find("span").stop().animate({
+			marginTop: "0" //Move the span back to its original state (0px)
+		}, 250);
+	});	
+});
+</SCRIPT>
+</head>
+	<body>
+	  
+      <div class="header-wrap">
+		<div class="header">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.jpg" title="logo" width="350px; height=100px;"/></a>
+			</div>
+		</div>
+		<div class="clear"> </div>
+        <div id="menu2-wrap">
+		<div id="menu2" class="menu2">
+			<ul>
+				<li><a href="index.php">首页</a></li>
+				<li><a href="about.php">关于我们</a></li>
+				<li><a href="products.html">代购商品</a></li>
+				<li><a href="#">淘宝店铺</a></li>
+				<li><a href="contact.php">联系我们</a></li>
+			</ul>
+				<div class="cls"> </div>
+		</div>
+        </div>
+        </div> 
+        <div class="wrap">      
+		<div id="slideshow">
+	        <ul>
+	          <li>
+	            <img id="img_slide1" src="images/slide1.jpg" alt="" title=" " />
+	          </li>
+	          <li>
+	            <img id="img_slide2" src="images/slide2.jpg" alt="" title=" " />
+	          </li>
+	          <li>           
+	            <img id="img_slide3" src="images/slide3.jpg" alt="" title="" />
+	          </li>
+	          <li>           
+	            <img id="img_slide4" src="images/slide2.jpg" alt="" title="" />
+	          </li>
+	          <li>           
+	            <img id="img_slide5" src="images/slide1.jpg" alt="" title="" />
+	          </li>	                         
+	        </ul>
+      </div>   
+      <script src="../js/craftyslide.min.js"></script>
+     	<script>
+        $("#slideshow").craftyslide();
+		$("#pagination").hide();
+		var i = 1;
+		function autoClick(){
+			if(i<6){
+				if(i > 1){
+					var imgIdBlock = "slide" + (i-1);
+					var imgSlideBlock = document.getElementById(imgIdBlock);
+				    imgSlideBlock.style.display = "none";
+				}
+				var imgId = "slide" + i;
+				var imgSlide = document.getElementById(imgId);
+				imgSlide.style.display = "block";
+			}
+			i++;
+			if(i==6){
+				var imgIdBlock = "slide" + (i-1);
+				var imgSlideBlock = document.getElementById(imgIdBlock);
+				imgSlideBlock.style.display = "none";			
+				i = 1;
+				var imgId = "slide" + i;
+				var imgSlide = document.getElementById(imgId);
+				imgSlide.style.display = "block";
+			}
+		}
+		var int = self.setInterval("autoClick()", 2500);
+      </script> 
+      <div class="clear"> </div>  
