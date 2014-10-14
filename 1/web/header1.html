@@ -51,52 +51,5 @@ $(document).ready(function() {
         </div>
         </div> 
         <div class="wrap">      
-		<div id="slideshow">
-	        <ul>
-	          <li>
-	            <img id="img_slide1" src="images/slide1.jpg" alt="" title=" " />
-	          </li>
-	          <li>
-	            <img id="img_slide2" src="images/slide2.jpg" alt="" title=" " />
-	          </li>
-	          <li>           
-	            <img id="img_slide3" src="images/slide3.jpg" alt="" title="" />
-	          </li>
-	          <li>           
-	            <img id="img_slide4" src="images/slide2.jpg" alt="" title="" />
-	          </li>
-	          <li>           
-	            <img id="img_slide5" src="images/slide1.jpg" alt="" title="" />
-	          </li>	                         
-	        </ul>
-      </div>   
-      <script src="../js/craftyslide.min.js"></script>
-     	<script>
-        $("#slideshow").craftyslide();
-		$("#pagination").hide();
-		var i = 1;
-		function autoClick(){
-			if(i<6){
-				if(i > 1){
-					var imgIdBlock = "slide" + (i-1);
-					var imgSlideBlock = document.getElementById(imgIdBlock);
-				    imgSlideBlock.style.display = "none";
-				}
-				var imgId = "slide" + i;
-				var imgSlide = document.getElementById(imgId);
-				imgSlide.style.display = "block";
-			}
-			i++;
-			if(i==6){
-				var imgIdBlock = "slide" + (i-1);
-				var imgSlideBlock = document.getElementById(imgIdBlock);
-				imgSlideBlock.style.display = "none";			
-				i = 1;
-				var imgId = "slide" + i;
-				var imgSlide = document.getElementById(imgId);
-				imgSlide.style.display = "block";
-			}
-		}
-		var int = self.setInterval("autoClick()", 2500);
-      </script> 
+		
       <div class="clear"> </div>  
